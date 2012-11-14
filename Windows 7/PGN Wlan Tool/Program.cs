@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace PGN_HOTSPOT_Login
+namespace PGN_WLAN_TOOL
 {
     static class Program
     {

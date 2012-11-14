@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using NativeWifi;
 
-namespace PGN_HOTSPOT_Login
+namespace PGN_WLAN_TOOL
 {
     public partial class Form1 : Form
     {
@@ -112,9 +112,16 @@ namespace PGN_HOTSPOT_Login
                 profileName = comboBox1.SelectedItem.ToString();
                 if (profileName.Length > 1)
                 {
-                    profileXml = String.Format(Properties.Resources.Template, profileName, StringToHex(profileName));
-                    client.Interfaces[0].SetProfile(Wlan.WlanProfileFlags.AllUser, profileXml, true);
-                    //client.Interfaces[0].Connect(Wlan.WlanConnectionMode.Auto,Wlan.Dot11BssType.Any, profileName);
+                    try
+                    {
+                        profileXml = String.Format(Properties.Resources.Template, profileName, StringToHex(profileName));
+                        client.Interfaces[0].SetProfile(Wlan.WlanProfileFlags.AllUser, profileXml, true);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Fehler: " + ex.GetBaseException().ToString(), ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    
                 }
                 else
                 {

@@ -1,7 +1,7 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual C# Express 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PGN-HOTSPOT Login", "PGN-HOTSPOT Login\PGN-HOTSPOT Login.csproj", "{5EAE8DB8-CCA5-487B-AC8F-180A6320C109}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2012 for Windows Desktop
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PGN WLan Tool", "PGN WLan Tool.csproj", "{5EAE8DB8-CCA5-487B-AC8F-180A6320C109}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

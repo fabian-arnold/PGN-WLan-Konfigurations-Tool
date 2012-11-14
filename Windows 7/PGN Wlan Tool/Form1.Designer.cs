@@ -1,4 +1,4 @@
-﻿namespace PGN_HOTSPOT_Login
+﻿namespace PGN_WLAN_TOOL
 {
     partial class Form1
     {
@@ -44,7 +44,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(111, 22);
             this.button1.TabIndex = 1;
-            this.button1.Text = "Hotspot suchen...";
+            this.button1.Text = "WLan suchen...";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -84,7 +84,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::PGN_WLAN_TOOL.Properties.Resources.PGN_Wlan_Logo;
             this.pictureBox1.Location = new System.Drawing.Point(10, 10);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(374, 148);
@@ -103,12 +103,12 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.MinimumSize = new System.Drawing.Size(400, 38);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(400, 39);
             this.Name = "Form1";
             this.Padding = new System.Windows.Forms.Padding(10);
-            this.ShowInTaskbar = false;
-            this.Text = "HOTSPOT - Setup";
+            this.Text = "W-Lan | Pirckheimer Gymnasium Nürnberg";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
