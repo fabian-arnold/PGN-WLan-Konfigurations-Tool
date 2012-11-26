@@ -43,7 +43,7 @@ namespace PGN_WLAN_TOOL
             {
                 if (MessageBox.Show("Keine WLan-Gerät verfügbar.\n Fortfahren?", "Fehler", MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.Yes)
                 {
-
+                    MessageBox.Show("Bevor sie konfigurieren müssen sie einen WLan-Gerät anschließen!");
                 }
                 else
                 {
@@ -55,22 +55,27 @@ namespace PGN_WLAN_TOOL
 
         private void button2_Click(object sender, EventArgs e)
         {
-
-            string profileName, profileXml;
-            profileName = "PGN-Wlan";
-           
-            try
+            if (client.Interfaces.Length < 1)
             {
-                profileXml = String.Format(Properties.Resources.Template, profileName, StringToHex(profileName));
-                client.Interfaces[0].SetProfile(Wlan.WlanProfileFlags.AllUser, profileXml, true);
+                MessageBox.Show("Bevor sie konfigurieren müssen sie einen WLan-Gerät anschließen!");
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Fehler: " + ex.GetBaseException().ToString(), ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            button2.Text = "W-Lan wurde konfiguriert!";
-            button2.Enabled = false;
+                string profileName, profileXml;
+                profileName = "PGN-Wlan";
 
+                try
+                {
+                    profileXml = String.Format(Properties.Resources.Template, profileName, StringToHex(profileName));
+                    client.Interfaces[0].SetProfile(Wlan.WlanProfileFlags.AllUser, profileXml, true);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Fehler: " + ex.GetBaseException().ToString(), ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                button2.Text = "W-Lan wurde konfiguriert!";
+                button2.Enabled = false;
+            }
         }
     }
 }
